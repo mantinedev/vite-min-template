@@ -1,0 +1,44 @@
+name: Build and Deploy yeah
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 20.9.0
+
+            - name: Cache npm packages
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build and Deploy
+              run: |
+                  npm run build
+                  rm -rf dist/.git
+                  cd dist
+                  touch .nojekyll
+                  echo "www.kenza.ar" > CNAME
+                  git init
+                  git config user.name "${{ github.actor }}"
+                  git config user.email "${{ github.actor }}@users.noreply.github.com"
+                  git add .
+                  git commit -m "Upgrade via GitHub Actions"
+                  git branch -M master
+                  git remote add origin https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/kenzaflow/kenzaflow.github.io.git
+                  git push -u origin master -f
