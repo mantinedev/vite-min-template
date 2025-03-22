@@ -15,14 +15,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "postcss-preset-mantine": "1.17.0",
     "postcss-simple-vars": "^7.0.1",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.7"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   },
   "packageManager": "yarn@4.7.0"
 }
