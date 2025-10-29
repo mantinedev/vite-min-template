@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@mantine/core": "8.3.4",
-    "@mantine/hooks": "8.3.4",
+    "@mantine/core": "8.3.6",
+    "@mantine/hooks": "8.3.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
