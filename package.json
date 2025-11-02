@@ -12,8 +12,10 @@
   "dependencies": {
     "@mantine/core": "8.3.6",
     "@mantine/hooks": "8.3.6",
+    "echarts": "^6.0.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/react": "^19.1.13",
