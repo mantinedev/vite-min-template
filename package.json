@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vp dev",
+    "build": "tsc && vp build",
+    "preview": "vp preview",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,7 +23,11 @@
     "postcss-preset-mantine": "1.18.0",
     "postcss-simple-vars": "^7.0.1",
     "typescript": "6.0.2",
-    "vite": "^8.0.0"
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "resolutions": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0"
   },
   "packageManager": "yarn@4.18.1"
 }
